@@ -14,6 +14,7 @@ const Characters = () => {
         axios(API)
         .then(res => {
             const data = res.data;
+            console.log(data)
             setCharacters(data.results);
             setNextPage(data.info.next);
             setPrevPage(data.info.prev);
@@ -24,13 +25,24 @@ const Characters = () => {
         return <Character character={character}/>;
     })
 
+    const prev = () => {
+        if(prevPage !== null)
+        setAPI(prevPage)
+    }
+
+    const next = () => {
+        setAPI(nextPage)
+    }
+
     return(
         <div>
             <section className='cards'>
                 {listCharacters}
             </section>
-            {/* <button onClick={() => setAPI(prevPage)}>Prev</button> */}
-            {/* <button onClick={() => setAPI(nextPage)}>Next</button> */}
+            <div className="pagination">
+                <button onClick={() => prev()} className="pagination__btn">Prev</button>
+                <button onClick={() => next()} className="pagination__btn">Next</button>
+            </div>
         </div>
     )
 }

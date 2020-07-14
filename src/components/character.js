@@ -11,6 +11,6 @@ const Character = ({character}) => {
             </Link>  
         </article>
     )
-}
+}   
 
 export default Character;

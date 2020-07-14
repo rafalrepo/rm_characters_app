@@ -40,6 +40,23 @@
     padding: 5px;
 }
 
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding: 0 20px;
+}
+
+.pagination__btn{
+    width: 150px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    background: transparent;
+    border: 1px solid #ffffff;
+}
+
 @media (max-width: 991px){
     .cards {
         grid-template-columns: repeat(3, 1fr);
